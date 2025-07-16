@@ -37,12 +37,45 @@
       "name": "shibbo",
       "age": 222,
       "city": "gaam m ",
-      "email": "shivosmartydeitcien@gymfreak.com",
+      "email": "eitcien@gymfreak.com",
       "mobile": "4444444445",
       "gender": "Male",
       "address": "ghantaghar",
-      "password": "!1qQ",
+      "password": "Qq@2",
       "id": "5bcb"
+    },
+    {
+      "id": "10c4",
+      "name": "rgt",
+      "age": 45,
+      "city": "fgg",
+      "email": "gaur@g",
+      "mobile": "2222222222",
+      "gender": "Male",
+      "address": "fsdgv",
+      "password": "sadhgdjg1Qq@"
+    },
+    {
+      "id": "89e1",
+      "name": "df",
+      "age": 4,
+      "city": "gf",
+      "email": "fg@gm",
+      "mobile": "1111111111",
+      "gender": "Male",
+      "address": "fgfh",
+      "password": "!1Qq"
+    },
+    {
+      "id": "7b7a",
+      "name": "fgdg",
+      "age": 3213,
+      "city": "rer",
+      "email": "ewr@gf",
+      "mobile": "2324332323",
+      "gender": "Female",
+      "address": "ffg",
+      "password": "\t!1Qq"
     }
   ]
 }

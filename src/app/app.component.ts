@@ -153,6 +153,7 @@ import { NgIf, NgFor , CommonModule } from '@angular/common';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Modal } from 'bootstrap';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-root',
@@ -219,6 +220,15 @@ export class AppComponent implements OnInit {
             this.editingUserId = null;
             this.showForm = false;
             this.userModal?.hide();
+
+            Swal.fire({
+            icon: 'success',
+            title: 'User updated successfully',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000
+          });
           },
           error: (err) => {
             console.error('Error updating user:', err);
@@ -231,6 +241,14 @@ export class AppComponent implements OnInit {
             this.userForm.reset();
             this.showForm = false;
             this.userModal?.hide();
+            Swal.fire({
+            icon: 'success',
+            title: 'User added successfully',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000
+          });
           },
           error: (err) => {
             console.error('Error adding user:', err);
