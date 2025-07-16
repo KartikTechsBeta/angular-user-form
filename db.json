@@ -7,7 +7,7 @@
       "email": "Rehan@gmail.com",
       "mobile": "9876543211",
       "gender": "Male",
-      "address": "Basti k aas pass kahin rehte hain",
+      "address": "Basti ",
       "password": "!1qQ",
       "id": "fb52"
     },
@@ -18,7 +18,7 @@
       "email": "kartik@techsbeta.com",
       "mobile": "7896543211",
       "gender": "Male",
-      "address": "ADA colony m rehta hu ",
+      "address": "ADA colony ",
       "password": "!1qQ",
       "id": "413e"
     },
@@ -26,45 +26,12 @@
       "name": "Shivansh",
       "age": 20,
       "city": "Hathras",
-      "email": "shibbo@gmail.com",
+      "email": "shiv@gmail.com",
       "mobile": "2345678910",
       "gender": "Male",
-      "address": "Pta nhi kahan rehta hai",
+      "address": "unknown",
       "password": "!1qQ",
       "id": "3ea1"
-    },
-    {
-      "name": "shibbo",
-      "age": 222,
-      "city": "gaam m ",
-      "email": "eitcien@gymfreak.com",
-      "mobile": "4444444445",
-      "gender": "Male",
-      "address": "ghantaghar",
-      "password": "Qq@2",
-      "id": "5bcb"
-    },
-    {
-      "id": "10c4",
-      "name": "rgt",
-      "age": 45,
-      "city": "fgg",
-      "email": "gaur@g",
-      "mobile": "2222222222",
-      "gender": "Male",
-      "address": "fsdgv",
-      "password": "sadhgdjg1Qq@"
-    },
-    {
-      "id": "89e1",
-      "name": "df",
-      "age": 4,
-      "city": "gf",
-      "email": "fg@gm",
-      "mobile": "1111111111",
-      "gender": "Male",
-      "address": "fgfh",
-      "password": "!1Qq"
     },
     {
       "id": "7b7a",
