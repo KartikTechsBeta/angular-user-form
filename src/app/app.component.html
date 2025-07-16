@@ -1,0 +1,228 @@
+<div><!-- 
+<!-- Add User Button 
+<div class="container mt-5 text-center">
+  <button class="btn btn-success" (click)="openForm()">Add User</button>
+</div>
+
+<!-- User List Table 
+<div class="container mt-4">
+  <h3>User List</h3>
+
+  <table class="table table-success table-striped table-hover mt-3" *ngIf="users.length > 0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.age }}</td>
+        <td>{{ user.city }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm me-2" (click)="editUser(user)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="users.length === 0">No users found.</p>
+</div>
+
+<!-- User Form Modal 
+<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userModalLabel">{{ editingUserId ? 'Edit User' : 'Add User' }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeForm()"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" formControlName="name" class="form-control" placeholder="Enter name">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input type="number" formControlName="age" class="form-control" placeholder="Enter age">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">City</label>
+            <input type="text" formControlName="city" class="form-control" placeholder="Enter city">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">
+            {{ editingUserId ? 'Update' : 'Submit' }}
+          </button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeForm()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>  --></div>
+
+<!-- yahan se new code  hai active  -->
+
+<!-- Add User Button -->
+<div class="container mt-5 text-center">
+  <button class="btn btn-primary px-4 py-2 shadow" (click)="openForm()">+ Add User</button>
+</div>
+
+<!-- User List Section -->
+<div class="container mt-4">
+  <div class="card shadow border-0">
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0">User List</h4>
+    </div>
+    <div class="card-body p-0">
+      <table class="table table-striped mb-0 table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Password</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="users.length > 0; else noUsers">
+          <tr *ngFor="let user of users">
+            <td>{{ user.name }}</td>
+            <td>{{ user.age }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.mobile }}</td>
+            <td>{{ user.gender }}</td>
+            <td>{{ user.address }}</td>
+            <td>{{ user.city }}</td>
+             <td>{{ user.password }}</td>
+            <td>
+              <button class="btn btn-outline-primary btn-sm me-2" (click)="editUser(user)">Edit</button>
+              <button class="btn btn-outline-danger btn-sm" (click)="deleteUser(user.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #noUsers>
+        <div class="p-3 text-center text-muted">No users found.</div>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+<!-- User Form Modal -->
+<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content shadow">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="userModalLabel">{{ editingUserId ? 'Edit User' : 'Add User' }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            (click)="closeForm()"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Name</label>
+              <input type="text" formControlName="name" class="form-control" placeholder="Enter full name"
+                (input)="restrictName($event)">
+              <div class="text-danger mt-1" *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+                Name is required.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Age</label>
+              <input type="number" formControlName="age" class="form-control" placeholder="Enter age">
+              <div class="text-danger mt-1" *ngIf="userForm.get('age')?.touched && userForm.get('age')?.invalid">
+                Age is required.
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">City</label>
+              <input type="text" formControlName="city" class="form-control" placeholder="Enter city">
+              <div class="text-danger mt-1" *ngIf="userForm.get('city')?.touched && userForm.get('city')?.invalid">
+                City is required.
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email</label>
+              <input type="email" formControlName="email" class="form-control" placeholder="Enter email">
+              <div class="text-danger mt-1" *ngIf="userForm.get('email')?.touched">
+                <div *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</div>
+                <div *ngIf="userForm.get('email')?.errors?.['email']">Enter a valid email.</div>
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Mobile</label>
+              <input type="text" maxlength="10" formControlName="mobile" class="form-control"
+                placeholder="Enter 10-digit mobile" (input)="restrictMobile($event)" />
+              <div class="text-danger mt-1" *ngIf="userForm.get('mobile')?.touched">
+                <div *ngIf="userForm.get('mobile')?.errors?.['required']">Mobile number is required.</div>
+                <div *ngIf="userForm.get('mobile')?.errors?.['pattern']">Enter a valid 10-digit number.</div>
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <label class="form-label d-block">Gender</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="gender" value="Male">
+                <label class="form-check-label">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="gender" value="Female">
+                <label class="form-check-label">Female</label>
+              </div>
+              <div class="text-danger mt-1" *ngIf="userForm.get('gender')?.touched && userForm.get('gender')?.invalid">
+                Gender is required.
+              </div>
+
+            </div>
+            <div class="col-12">
+              <label class="form-label">Address</label>
+              <textarea rows="3" class="form-control" formControlName="address"
+                placeholder="Enter full address"></textarea>
+              <div class="text-danger mt-1"
+                *ngIf="userForm.get('address')?.touched && userForm.get('address')?.invalid">
+                Address is required.
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control" formControlName="password"
+                  [ngClass]="{ 'is-invalid': userForm.get('password')?.invalid && userForm.get('password')?.touched }" />
+                <div class="invalid-feedback"
+                  *ngIf="userForm.get('password')?.touched && userForm.get('password')?.invalid">
+                  <div *ngIf="userForm.get('password')?.errors?.['required']">Password is required.</div>
+                  <div *ngIf="userForm.get('password')?.errors?.['minlength']">Password must be at least 4 characters.
+                  </div>
+                  <div *ngIf="userForm.get('password')?.errors?.['pattern']">
+                    Must include uppercase, lowercase, number, and special character.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer bg-light">
+          <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">
+            {{ editingUserId ? 'Update' : 'Submit' }}
+          </button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeForm()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

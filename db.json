@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "name": "Rehan",
+      "age": 24,
+      "city": "Gorakhpur",
+      "email": "Rehan@gmail.com",
+      "mobile": "9876543211",
+      "gender": "Male",
+      "address": "Basti k aas pass kahin rehte hain",
+      "password": "!1qQ",
+      "id": "fb52"
+    },
+    {
+      "name": "Kartik",
+      "age": 22,
+      "city": "Aligarh",
+      "email": "kartik@techsbeta.com",
+      "mobile": "7896543211",
+      "gender": "Male",
+      "address": "ADA colony m rehta hu ",
+      "password": "!1qQ",
+      "id": "413e"
+    },
+    {
+      "name": "Shivansh",
+      "age": 20,
+      "city": "Hathras",
+      "email": "shibbo@gmail.com",
+      "mobile": "2345678910",
+      "gender": "Male",
+      "address": "Pta nhi kahan rehta hai",
+      "password": "!1qQ",
+      "id": "3ea1"
+    },
+    {
+      "name": "shibbo",
+      "age": 222,
+      "city": "gaam m ",
+      "email": "shivosmartydeitcien@gymfreak.com",
+      "mobile": "4444444445",
+      "gender": "Male",
+      "address": "ghantaghar",
+      "password": "!1qQ",
+      "id": "5bcb"
+    }
+  ]
+}
